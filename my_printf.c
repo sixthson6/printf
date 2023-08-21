@@ -3,19 +3,23 @@
 /**
  * print_str - print string
  * @str: string
- * Return: Nothing
+ * Return: No of bytes
  */
 
-void print_str(char *str)
+int print_str(char *str)
 {
+	int count = 0;
+
 	if (str == NULL)
-		return;
+		return (0);
 
 	while (*str != '\0')
 	{
 		putchar(*str);
 		str++;
+		count++;
 	}
+	return (count);
 }
 
 /**
