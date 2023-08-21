@@ -9,51 +9,56 @@
 int _printf(const char *format, ...)
 {
 	va_list arguments;
-	int i = 0;
+	int count = 0;
 	int letter;
 	char *str;
-	int num;
 
 	va_start(arguments, format);
 
-	while (format[i])
+	while (*format)
 	{
-		if (format[i] == '%')
+		if (*format == '%')
 		{
-			switch (format[i + 1])
+			format++;
+
+			switch (*format)
 			{
 				case 'c':
-					letter = va_arg(arguments, int);
-					printf("%c", letter);
+					letter = (char)va_arg(arguments, int);
+					putchar(letter);
+					count++;
 					break;
 
 				case 's':
 					str = va_arg(arguments, char *);
-					printf("%s", str);
+					while (*str != '\0')
+					{
+						putchar(*str);
+						str++;
+						count++;
+					}
 					break;
 
 				case '%':
 					putchar('%');
+					count++;
 					break;
 
-				case 'd':
-				case 'i':
-					num = va_arg(arguments, int);
-					printf("%d", num);
-					break;
 
 				default:
-					putchar(format[i]);
+					putchar('%');
+					putchar(*format);
+					count += 2;
 					break;
 			}
-			i++;
 		}
 		else
 		{
-			putchar(format[i]);
+			putchar(*format);
+			count++;
 		}
 
-		i++;
+		format++;
 	}
 
 	va_end(arguments);
