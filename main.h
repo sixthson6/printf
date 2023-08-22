@@ -26,5 +26,6 @@ void pr_fun(va_list arg);
 int print_str(char *str);
 void printNumber(int number);
 int _printf(const char *format, ...);
+int handle_format_argument(const char **format, va_list arguments);
 
 #endif

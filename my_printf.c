@@ -71,10 +71,7 @@ void printNumber(int num)
 int _printf(const char *format, ...)
 {
 	va_list arguments;
-	int letter;
-	char *str;
 	int count = 0;
-	int num;
 
 	va_start(arguments, format);
 
@@ -83,36 +80,9 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-
-			switch (*format)
-			{
-				case 'c':
-					letter = (char)va_arg(arguments, int);
-					putchar(letter);
-					count++;
-					break;
-				case 's':
-					str = va_arg(arguments, char *);
-					print_str(str);
-					count++;
-					break;
-				case '%':
-					putchar('%');
-					count++;
-					break;
-				case 'd':
-				case 'i':
-					num = va_arg(arguments, int);
-					printNumber(num);
-					count++;
-					break;
-				default:
-					putchar('%');
-					putchar(*format);
-					count += 2;
-					break;
-			}
+			count += handle_format_argument(&format, arguments);
 		}
+
 		else
 		{
 			putchar(*format);
@@ -124,5 +94,52 @@ int _printf(const char *format, ...)
 
 	va_end(arguments);
 
+	return (count);
+}
+
+/**
+ * handle_format_argument - handles the format argument
+ * @format: format string
+ * @arguments: va_list of arguments
+ * Return: Number of characters printed
+ */
+int handle_format_argument(const char **format, va_list arguments)
+{
+	int count = 0;
+	int letter;
+	char *str;
+	int num;
+
+	switch (**format)
+	{
+		case 'c':
+			letter = (char)va_arg(arguments, int);
+			putchar(letter);
+			count++;
+			break;
+
+		case 's':
+			str = va_arg(arguments, char *);
+			count += print_str(str);
+			break;
+
+		case '%':
+			putchar('%');
+			count++;
+			break;
+
+		case 'd':
+		case 'i':
+			num = va_arg(arguments, int);
+			printNumber(num);
+			count++;
+			break;
+
+		default:
+			putchar('%');
+			putchar(**format);
+			count += 2;
+			break;
+	}
 	return (count);
 }
