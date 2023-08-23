@@ -12,20 +12,24 @@
  * @_print: func pointer to ***_fun functions
  */
 
-typedef struct printer
+typedef struct sym
 {
-	char *sym;
-	void (*_print)(va_list arg);
-} print_funct;
+	char sym;
+	void (*_print)(va_list, char[]);
+} format_types;
 
-void printNumber(int num);
-void char_fun(va_list arg);
-void int_fun(va_list arg);
-void str_fun(va_list arg);
-void pr_fun(va_list arg);
-int print_str(char *str);
-void printNumber(int number);
 int _printf(const char *format, ...);
+int specifier_print_function(const char *format, int *index,
+		va_list arg, char buffer[]);
+void buffer_printer(char buffer[], *buffer_index);
+
+/* helper funtions that print*/
+int write_fucntion(char c, char buffer[]);
+int write_number_function(int is_neg, int index, char buffer[]);
+int write_num(int index, char buffer[], int len);
+long int size_number_function(long int num, int size);
+
 int handle_format_argument(const char **format, va_list arguments);
+
 
 #endif
