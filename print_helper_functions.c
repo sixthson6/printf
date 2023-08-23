@@ -7,7 +7,7 @@
  * Return: no. of bytes printed
  */
 
-int write_fucntion(char c, char buffer[])
+int write_function(char c, char buffer[])
 {
 	int k = 0;
 	/*char separator = ' ';*/

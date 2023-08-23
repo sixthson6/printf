@@ -19,24 +19,24 @@ int specifier_print_function(const char *format, int *index,
 		{'s', string_function},
 		{'i', int_function},
 		{'d', int_function},
-		{'%', percentage_function},
+		{'%', percent_function},
 		{'\0', NULL}
 	};
 	
-	(void)buffer[];
+	(void)buffer;
 
-	for (i = 0; function[i].format != '\0'; i++)
+	for (i = 0; function[i].sym != '\0'; i++)
 	{
-		if (format[*index] == format_types[i].sym)
+		if (format[*index] == function[i].sym)
 		{
 			holder = function[i]._print(arg, buffer);
 			return (holder);
 		}
 	}
 
-	if (format_types[i].sym == '\0')
+	if (function[i].sym == '\0')
 	{
-		if (format[index] == '\0')
+		if (format[*index] == '\0')
 			return (-1);
 		len += write(1, "%%", 1);
 

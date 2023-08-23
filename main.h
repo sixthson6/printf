@@ -19,7 +19,7 @@
 typedef struct sym
 {
 	char sym;
-	void (*_print)(va_list, char[]);
+	int (*_print)(va_list, char[]);
 } format_types;
 
 int _printf(const char *format, ...);

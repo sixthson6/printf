@@ -45,7 +45,7 @@ int _printf(const char *format, ...)
 
 	buffer_printer(buffer, &buffer_index);
 
-	va_end(list);
+	va_end(arg);
 
 	return (chars_printed);
 }
@@ -60,7 +60,7 @@ int _printf(const char *format, ...)
 void buffer_printer(char buffer[], int *buffer_index)
 {
 	if (*buffer_index > 0)
-		write(1, &buffer[0], *buff_ind);
+		write(1, &buffer[0], *buffer_index);
 
 	*buffer_index = 0;
 }
