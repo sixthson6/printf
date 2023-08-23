@@ -20,6 +20,7 @@ int specifier_print_function(const char *format, int *index,
 		{'i', int_function},
 		{'d', int_function},
 		{'%', percent_function},
+		{'b', binary_function},
 		{'\0', NULL}
 	};
 	
