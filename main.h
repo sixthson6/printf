@@ -7,6 +7,8 @@
 #include <stdio.h>
 
 #define BUFF_SIZE 1024
+#define S_LONG 2
+#define S_SHORT 1
 
 /**
  * struct printer - struct for _printf
@@ -36,6 +38,6 @@ int handle_format_argument(const char **format, va_list arguments);
 int int_function(va_list arg, char buffer[]);
 int char_function(va_list arg, char buffer[]);
 int string_function(va_list arg, char buffer[]);
-int percent_function(va_arg arg, char buffer[]);
+int percent_function(va_list arg, char buffer[]);
 
 #endif

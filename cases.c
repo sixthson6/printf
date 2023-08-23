@@ -44,7 +44,7 @@ int string_function(va_list arg, char buffer[])
  * @arg: list of arguments
  * Return: number of bytes printed
  */
-int percent_function(va_arg arg, char buffer[])
+int percent_function(va_list arg, char buffer[])
 {
 	(void)arg;
 	(void)buffer;
@@ -86,5 +86,5 @@ int int_function(va_list arg, char buffer[])
 
 	x++;
 
-	return (write_number_function(is_negative, i, buffer));
+	return (write_number_function(is_negative, x, buffer));
 }

@@ -20,7 +20,7 @@
  * @size: type
  * Return: result
  */
-long int size_number_function(long in num, int size)
+long int size_number_function(long int num, int size)
 {
 	if (size == S_LONG)
 		return (num);
