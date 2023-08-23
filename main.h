@@ -39,5 +39,6 @@ int int_function(va_list arg, char buffer[]);
 int char_function(va_list arg, char buffer[]);
 int string_function(va_list arg, char buffer[]);
 int percent_function(va_list arg, char buffer[]);
+int binary_function(va_list arg, char buffer[]);
 
 #endif
