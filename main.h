@@ -41,4 +41,11 @@ int string_function(va_list arg, char buffer[]);
 int percent_function(va_list arg, char buffer[]);
 int binary_function(va_list arg, char buffer[]);
 
+int unsigned_function(va_list arg, char buffer[]);
+int octal_function(va_list arg, char buffer[]);
+int hexadecimal_function(va_list arg, char buffer[]);
+int hexa_print(va_list types, char map[], char buffer[]);
+
+int unsigned_printer(int is_neg, int index, char buffer[]);
+
 #endif

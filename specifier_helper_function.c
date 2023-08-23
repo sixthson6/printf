@@ -15,12 +15,11 @@ int specifier_print_function(const char *format, int *index,
 {
 	int i, len = 0, count = -1, holder;
 	format_types function[] = {
-		{'c', char_function},
-		{'s', string_function},
-		{'i', int_function},
-		{'d', int_function},
-		{'%', percent_function},
-		{'b', binary_function},
+		{'c', char_function},{'u', unsigned_function},
+		{'s', string_function},{'o', octal_function},
+		{'i', int_function},{'x', hexadecimal_function},
+		{'d', int_function},{'X', hexadecimal_function},
+		{'%', percent_function},{'b', binary_function},
 		{'\0', NULL}
 	};
 
