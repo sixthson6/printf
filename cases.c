@@ -22,9 +22,10 @@ int char_function(va_list arg, char buffer[])
  */
 int string_function(va_list arg, char buffer[])
 {
-	(void)buffer;
 	int len = 0;
 	char *str = va_arg(arg, char *);
+
+	(void)buffer;
 
 	if (str == NULL)
 	{
@@ -43,7 +44,7 @@ int string_function(va_list arg, char buffer[])
  * @arg: list of arguments
  * Return: number of bytes printed
  */
-int percent_function(va_arg, char buffer[])
+int percent_function(va_arg arg, char buffer[])
 {
 	(void)arg;
 	(void)buffer;
@@ -63,7 +64,7 @@ int int_function(va_list arg, char buffer[])
 	long int y = va_arg(arg, long int);
 	unsigned long int num;
 
-	y = size_number_function(y, size);
+/*	y = size_number_function(y, size);*/
 
 	if (y == 0)
 		buffer[x--] = '0';
@@ -83,7 +84,7 @@ int int_function(va_list arg, char buffer[])
 		num /= 10;
 	}
 
-	i++;
+	x++;
 
 	return (write_number_function(is_negative, i, buffer));
 }
