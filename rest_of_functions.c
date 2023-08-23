@@ -55,7 +55,7 @@ int octal_function(va_list arg, char buffer[])
 }
 
 /**
- * hexadecimal_function - Prints an unsigned number 
+ * hexadecimal_function - Prints an unsigned number
  * in hexadecimal notation
  * @arg: arguments
  * @buffer: buffer array

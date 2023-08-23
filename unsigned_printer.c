@@ -2,9 +2,9 @@
 
 /**
  * unsigned_printer - unsigned num
- * @is_neg: Number indicating if 
+ * @is_neg: Number indicating if
  * the num is negative
- * @ind: Index
+ * @index: Index
  * @buffer: array of chars
  * Return: n( chars).
  */
