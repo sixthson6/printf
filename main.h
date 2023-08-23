@@ -11,8 +11,8 @@
 #define S_SHORT 1
 
 /**
- * struct printer - struct for _printf
- * @sum: string holder
+ * struct sym - struct for _printf
+ * @sym: string holder
  * @_print: func pointer to ***_fun functions
  */
 
