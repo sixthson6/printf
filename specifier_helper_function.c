@@ -15,19 +15,21 @@ int specifier_print_function(const char *format, int *index,
 {
 	int i, len = 0, count = -1, holder;
 	format_types function[] = {
-		{'c', char_fucntion},
+		{'c', char_function},
 		{'s', string_function},
-		{'i', int_fucntion},
-		{'d', int_fucntion},
+		{'i', int_function},
+		{'d', int_function},
 		{'%', percentage_function},
 		{'\0', NULL}
 	};
+	
+	(void)buffer[];
 
-	for (i = 0; functon[i].format != '\0'; i++)
+	for (i = 0; function[i].format != '\0'; i++)
 	{
 		if (format[*index] == format_types[i].sym)
 		{
-			holder = format_types[i]._print(arg, buffer);
+			holder = function[i]._print(arg, buffer);
 			return (holder);
 		}
 	}

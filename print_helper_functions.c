@@ -10,10 +10,10 @@
 int write_fucntion(char c, char buffer[])
 {
 	int k = 0;
-	char separator = ' ';
+	/*char separator = ' ';*/
 
-	buffer[i++] = c;
-	buffer[i] = '\0';
+	buffer[k++] = c;
+	buffer[k] = '\0';
 
 	return (write(1, &buffer[0], 1));
 }
@@ -29,6 +29,7 @@ int write_fucntion(char c, char buffer[])
 int write_number_function(int is_neg, int index, char buffer[])
 {
 	int len = BUFF_SIZE - index - 1;
+	(void)is_neg;
 
 	return (write_num(index, buffer, len));
 }

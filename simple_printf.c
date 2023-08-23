@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 		{
 			buffer_printer(buffer, &buffer_index);
 			++i;
-			specifiers_printed = specifier_print_function(format, &i, list);
+			specifiers_printed = specifier_print_function(format, &i, arg, buffer);
 
 			if (specifiers_printed == -1)
 				return (-1);
@@ -57,7 +57,7 @@ int _printf(const char *format, ...)
  * Return: Nothing
  */
 
-void buffer_printer(char buffer[], *buffer_index)
+void buffer_printer(char buffer[], int *buffer_index)
 {
 	if (*buffer_index > 0)
 		write(1, &buffer[0], *buff_ind);
