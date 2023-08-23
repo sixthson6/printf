@@ -42,7 +42,8 @@ int string_function(va_list arg, char buffer[])
 /**
  * percent_function - prints percent sign
  * @arg: list of arguments
- * Return: number of bytes printed
+ * @buffer: temporal storage
+ * Return: number of bytes
  */
 int percent_function(va_list arg, char buffer[])
 {
@@ -55,6 +56,7 @@ int percent_function(va_list arg, char buffer[])
 /**
  * int_function - prints int
  * @arg: list of arguments
+ * @buffer: temporal storage
  * Return: number of bytes printed
  */
 int int_function(va_list arg, char buffer[])
@@ -74,7 +76,7 @@ int int_function(va_list arg, char buffer[])
 
 	if (y < 0)
 	{
-		num = (unsigned long int)((-1) *y);
+		num = (unsigned long int)((-1) * y);
 		is_negative = 1;
 	}
 

@@ -22,7 +22,7 @@ int specifier_print_function(const char *format, int *index,
 		{'%', percent_function},
 		{'\0', NULL}
 	};
-	
+
 	(void)buffer;
 
 	for (i = 0; function[i].sym != '\0'; i++)
