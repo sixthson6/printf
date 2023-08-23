@@ -99,25 +99,26 @@ int int_function(va_list arg, char buffer[])
 int binary_function(va_list arg, char buffer[])
 {
 	unsigned int a, b, c, sum;
-	unsigned in n[32];
+	unsigned int n[32];
 	int count;
+	char f;
 
 	(void)buffer;
-	
-	a =va_arg(arg, unsigned int);
+
+	a = va_arg(arg, unsigned int);
 	b = 2147483648;
 	n[0] = a / b;
-	for (c = 1; c < 32; c++);
+	for (c = 1; c < 32; c++)
 	{
 		b /= 2;
 		n[c] = (a / b) % 2;
 	}
 	for (c = 0, sum = 0, count = 0; c < 32; c++)
 	{
-		sum += n[i];
-		fi (sum || c ==32)
+		sum += n[c];
+		if (sum || c == 32)
 		{
-			char f = '0' + n[c];
+			f = '0' + n[c];
 
 			write(1, &f, 1);
 			count++;
