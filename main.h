@@ -31,5 +31,9 @@ long int size_number_function(long int num, int size);
 
 int handle_format_argument(const char **format, va_list arguments);
 
+int int_function(va_list arg, char buffer[]);
+int char_function(va_list arg, char buffer[]);
+int string_function(va_list arg, char buffer[]);
+int percent_function(va_arg, char buffer[]);
 
 #endif
