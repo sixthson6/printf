@@ -48,4 +48,7 @@ int hexa_print(va_list types, char map[], char buffer[]);
 
 int unsigned_printer(int is_neg, int index, char buffer[]);
 
+int hexa_convert(char ascii_c, char buffer[], int i);
+int print_printable_func(char n);
+
 #endif
