@@ -33,10 +33,10 @@ int nonprintable_function(va_list arg, char buffer[])
 
 	while (strr[i] != '\0')
 	{
-		if (print_printable_char(str[i]))
-			buffer[i + off] = str[i];
+		if (print_printable_func(strr[i]))
+			buffer[i + off] = strr[i];
 		else
-			off += hexa_convert(str[i], buffer, i + off);
+			off += hexa_convert(strr[i], buffer, i + off);
 		i++;
 	}
 

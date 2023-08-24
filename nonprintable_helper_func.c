@@ -24,7 +24,7 @@ int hexa_convert(char ascii_c, char buffer[], int i)
 	char hexa_map[] = "0123456789ABCDEF";
 
 	if (ascii_c < 0)
-		ascii_code = ascii_c * -1;
+		ascii_c = ascii_c * -1;
 
 	buffer[i++] = '\\';
 	buffer[i++] = 'x';
