@@ -51,6 +51,7 @@ int unsigned_printer(int is_neg, int index, char buffer[]);
 int hexa_convert(char ascii_c, char buffer[], int i);
 int print_printable_func(char n);
 int nonprintable_function(va_list arg, char buffer[]);
+int pointer_function(va_list arg, char buffer[]);
 
 int pointer_helper_function(char buffer[], int index, int len);
 #endif

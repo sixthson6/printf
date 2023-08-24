@@ -44,3 +44,30 @@ int nonprintable_function(va_list arg, char buffer[])
 
 	return (write(1, buffer, i + off));
 }
+
+/**
+ * pointer_function - prints value of a pointer variable
+ * @arg: list of arguments
+ * @buffer: array for print
+ */
+int pointer_function(va_list arg, char buffer[])
+{
+	int nd = BUFF_SIZE - 2, len =2, paddd_st = 1;
+	unsigned long num_add;
+	char mp_to[] = "0123456789abcdef";
+	void *adddrs = va_arg(arg, void *);
+
+	buffer[BUFF_SIZE - 1] = '\0';
+
+	num_add = (unsigned long)adddrs;
+
+	while (num_add > 0)
+	{
+		buffer[nd--] = map_to[num_adddrs % 16];
+		num_adddrs /= 16;
+		len;
+	}
+
+	return (pointer_helper_function(buffer, nd, len));
+}
+
