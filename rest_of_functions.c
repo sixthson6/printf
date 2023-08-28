@@ -71,11 +71,7 @@ int octal_function(va_list arg, char buffer[], int f, int w, int p)
 
 int hexadecimal_function(va_list arg, char buffer[], int f, int w, int p)
 {
-	(void)f;
-	(void)w;
-	(void)p;
-
-	return (hexa_print(arg, "0123456789abcdef", buffer));
+	return (hexa_print(arg, "0123456789abcdef", buffer, f, w, p));
 }
 
 /**
@@ -86,7 +82,7 @@ int hexadecimal_function(va_list arg, char buffer[], int f, int w, int p)
  * Return: n(of character bytes printed)
  */
 
-int hexa_print(va_list arg, char map[], char buffer[])
+int hexa_print(va_list arg, char map[], char buffer[], int f, int w, int p)
 {
 	int k = BUFF_SIZE - 2;
 	unsigned long int number = va_arg(arg, unsigned long int);

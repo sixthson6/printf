@@ -32,7 +32,7 @@ int write_function(char c, char buffer[], int f, int w, int p)
 int write_number_function(int is_neg, int index, char buffer[], int f, int w, int p)
 {
 	int len = BUFF_SIZE - index - 1;
-	char sep = ' '; c = 0;
+	char sep = ' '; int c = 0;
 
 	if ((f & 4) && !(f & 1))
 	{
@@ -91,7 +91,7 @@ int write_num(int index, char buffer[], int len, int f, int w, int p, char bdd, 
 			{
 				if (more_c)
 					buffer[--index] = more_c;
-				return (write(1, &buffer[index], len) + write(1 &buffer[1], a - 1));
+				return (write(1, &buffer[index], len) + write(1, &buffer[1], a - 1));
 			}
 			else if (!(f & 1) && bdd == ' ') 
 			{

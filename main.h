@@ -30,7 +30,8 @@ void buffer_printer(char buffer[], int *buffer_index);
 /* helper funtions that print*/
 int write_function(char c, char buffer[], int f, int w, int p);
 int write_number_function(int is_neg, int index, char buffer[], int f, int w, int p);
-int write_num(int index, char buffer[], int len, int f, int w, int p); 
+int write_num(int ind, char bff[], int flags, int width, int precision,
+	int length, char padd, char extra_c);
 long int size_number_function(long int num, int size);
 
 int handle_format_argument(const char **format, va_list arguments);
@@ -44,7 +45,7 @@ int binary_function(va_list arg, char buffer[], int f, int w, int p);
 int unsigned_function(va_list arg, char buffer[], int f, int w, int p);
 int octal_function(va_list arg, char buffer[], int f, int w, int p);
 int hexadecimal_function(va_list arg, char buffer[], int f, int w, int p);
-int hexa_print(va_list types, char map[], char buffer[]);
+int hexa_print(va_list types, char map[], char buffer[], int f, int w, int p);
 
 int unsigned_printer(int is_neg, int index, char buffer[], int f, int w, int p);
 
