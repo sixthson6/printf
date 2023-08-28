@@ -123,9 +123,9 @@ int rot13string_function(va_list arg, char buffer[], int f, int w, int p)
 	{
 		for (j = 0; input_arr[j]; j++)
 		{
-			if (inut_arr[j] == str[i])
+			if (input_arr[j] == str[i])
 			{
-				c = output[j];
+				c = output_arr[j];
 				write(1, &c, 1);
 				count++;
 				break;
