@@ -7,7 +7,7 @@
  * Return: num( character bytes printed).
  */
 
-int unsigned_function(va_list arg, char buffer[], int flags, int width, int precision)
+int unsigned_function(va_list arg, char buffer[], int f, int w, int p)
 {
 	int k = BUFF_SIZE - 2;
 	unsigned long int number = va_arg(arg, unsigned long int);
@@ -26,7 +26,7 @@ int unsigned_function(va_list arg, char buffer[], int flags, int width, int prec
 	}
 	k++;
 
-	return (unsigned_printer(0, k, buffer, flags, width, precision));
+	return (unsigned_printer(0, k, buffer, f, w, p));
 }
 
 /**
@@ -36,7 +36,7 @@ int unsigned_function(va_list arg, char buffer[], int flags, int width, int prec
  * Return:  n(of character bytes printed)
  */
 
-int octal_function(va_list arg, char buffer[], int flags, int width, int precision)
+int octal_function(va_list arg, char buffer[], int f, int w, int p)
 {
 	int k = BUFF_SIZE - 2;
 	unsigned long int number = va_arg(arg, unsigned long int);
@@ -58,7 +58,7 @@ int octal_function(va_list arg, char buffer[], int flags, int width, int precisi
 		buffer[k--] = '0';
 	k++;
 
-	return (unsigned_printer(0, k, buffer, flags, width, precision));
+	return (unsigned_printer(0, k, buffer, f, w, p));
 }
 
 /**
@@ -69,9 +69,9 @@ int octal_function(va_list arg, char buffer[], int flags, int width, int precisi
  * Return: n(of character bytes printed)
  */
 
-int hexadecimal_function(va_list arg, char buffer[], int flags, int width, int precision)
+int hexadecimal_function(va_list arg, char buffer[], int f, int w, int p)
 {
-	return (hexa_print(arg, "0123456789abcdef", buffer, flags, 'x', width, precision));
+	return (hexa_print(arg, "0123456789abcdef", buffer, f, 'x', w, p));
 }
 
 /**

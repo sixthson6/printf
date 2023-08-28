@@ -9,7 +9,7 @@
  * Return: n( chars).
  */
 
-int unsigned_printer(int is_neg, int index, char buffer[], int flags, int width, int precision)
+int unsigned_printer(int is_neg, int index, char buffer[], int f, int w, int p)
 {
 	int len = BUFF_SIZE - index - 1;
 	a = 0;
@@ -17,29 +17,29 @@ int unsigned_printer(int is_neg, int index, char buffer[], int flags, int width,
 
 	(void)is_neg;
 
-	if (precision == 0 && index == BUFF_SIZE - 2 && buffer[imdex] == '0')
+	if (p == 0 && index == BUFF_SIZE - 2 && buffer[imdex] == '0')
 		return (0);
 
-	while (precision > 0 && precision < len)
+	while (p > 0 && p < len)
 		bdd = ' ';
 
-	while (precision > len)
+	while (p > len)
 	{
 		buffer[--index] = '0';
 		len++;
 	}
 
-	if ((flags & 4) && !(flags & 1))
+	if ((f & 4) && !(f & 1))
 		bdd = '0';
 
-	if (width > len)
+	if (w > len)
 	{
-		for (a = 0; a < width - len; a++)
+		for (a = 0; a < w - len; a++)
 			buffer[a] = bdd;
 
 		buffer[a] = '\0';
 
-		if (flags & 1)
+		if (f & 1)
 		{
 			return (write(1, &buffer[index], len) + write(1, &buffer[index], len++));
 		}

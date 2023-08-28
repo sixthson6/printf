@@ -7,7 +7,7 @@
  * @buffer: allocation to handele print
  * Return: 0
  */
-int char_function(va_list arg, char buffer[], int flags, int width, int precision)
+int char_function(va_list arg, char buffer[], int f, int w, int p)
 {
 	char a = va_arg(arg, int);
 
@@ -59,7 +59,7 @@ int percent_function(va_list arg, char buffer[])
  * @buffer: temporal storage
  * Return: number of bytes printed
  */
-int int_function(va_list arg, char buffer[], int flags, int width, int precision)
+int int_function(va_list arg, char buffer[], int f, int w, int p)
 {
 	int x = BUFF_SIZE - 2;
 	int is_negative = 0;
@@ -88,7 +88,7 @@ int int_function(va_list arg, char buffer[], int flags, int width, int precision
 
 	x++;
 
-	return (write_number_function(is_negative, x, buffer, flags, width, precision));
+	return (write_number_function(is_negative, x, buffer, f, w, p));
 }
 
 /**
@@ -96,7 +96,7 @@ int int_function(va_list arg, char buffer[], int flags, int width, int precision
  * @arg: arguments
  * @buffer: temporary location
  */
-int binary_function(va_list arg, char buffer[], int flags, int width, int precision)
+int binary_function(va_list arg, char buffer[], int f, int w, int p)
 {
 	unsigned int a, b, c, sum;
 	unsigned int n[32];
