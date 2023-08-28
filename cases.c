@@ -9,11 +9,11 @@
  */
 int char_function(va_list arg, char buffer[], int f, int w, int p)
 {
+	char a = va_arg(arg, int);
+
 	(void)f;
 	(void)w;
 	(void)p;
-
-	char a = va_arg(arg, int);
 
 	return (write_function(a, buffer, f, w, p));
 }
@@ -24,12 +24,15 @@ int char_function(va_list arg, char buffer[], int f, int w, int p)
  * @buffer: allocation to handle print
  * Return: number of bytes printed
  */
-int string_function(va_list arg, char buffer[])
+int string_function(va_list arg, char buffer[], int f, int w, int p)
 {
 	int len = 0;
 	char *str = va_arg(arg, char *);
 
 	(void)buffer;
+	(void)f;
+	(void)w;
+	(void)p;
 
 	if (str == NULL)
 	{
@@ -49,10 +52,13 @@ int string_function(va_list arg, char buffer[])
  * @buffer: temporal storage
  * Return: number of bytes
  */
-int percent_function(va_list arg, char buffer[])
+int percent_function(va_list arg, char buffer[], int f, int w, int p)
 {
 	(void)arg;
 	(void)buffer;
+	(void)f;
+	(void)w;
+	(void)p;
 
 	return (write(1, "%%", 1));
 }
@@ -105,9 +111,12 @@ int binary_function(va_list arg, char buffer[], int f, int w, int p)
 	unsigned int a, b, c, sum;
 	unsigned int n[32];
 	int count;
-	char f;
+	char d;
 
 	(void)buffer;
+	(void)f;
+	(void)w;
+	(void)p;
 
 	a = va_arg(arg, unsigned int);
 	b = 2147483648;
@@ -122,9 +131,9 @@ int binary_function(va_list arg, char buffer[], int f, int w, int p)
 		sum += n[c];
 		if (sum || c == 32)
 		{
-			f = '0' + n[c];
+			d = '0' + n[c];
 
-			write(1, &f, 1);
+			write(1, &d, 1);
 			count++;
 		}
 	}
