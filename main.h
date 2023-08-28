@@ -54,6 +54,8 @@ int nonprintable_function(va_list arg, char buffer[], int f, int w, int p);
 int pointer_function(va_list arg, char buffer[], int f, int w, int p);
 
 int pointer_helper_function(char buffer[], int index, int len, int f, int w, int p);
+int rot13string_function(va_arg arg, char buffer[], int f, int w, int p);
+int reverse_function(va_list arg, char buffer[], int f, int w, int p);
 
 int flag_function(const char *format, int *i);
 int precision_function(const char *format, int *i, va_list list);
