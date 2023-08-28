@@ -100,3 +100,53 @@ int hexa_print(va_list arg, char map[], char buffer[])
 	k++;
 	return (unsigned_printer(0, k, buffer));
 }
+
+/**
+ * pointer_printer - writes address
+ * @buffer: chars array
+ * @index: where number begins
+ * @len: length
+ * @w: width
+ * @f: flags
+ * @bdd: padding
+ * @more_c: additional char
+ * @bdd_st: where padding begins
+ * Return: chars written
+ */
+int pointer_printer(char buffer[], int index, int len, int w, int f, char bdd, char more_c, int bdd_st)
+{
+	int a;
+
+	if (w > len)
+	{
+		for (a = 3; a < w - len + 3; a++)
+			buffer[a] = bdd;
+		buffer[a] = '\0';
+		if (f & 1 && bdd == ' ')
+		{
+			buffer[--index] = 'x';
+			buffer[--index] = '0';
+
+			if (more_c)
+				buffer[--index] = more_c;
+			return (write(1, &buffer[index], len) + write(1, &buffer[ind], len));
+		}
+
+		else if (!(f & 1) && bdd == '0')
+		{
+			if (more_c)
+				buffer[--bdd_st] = more_c;
+			buffer[1] = '0';
+			buffer[2] = 'x';
+
+			return (write(1, &buffer[bdd_st], a - bdd_st) + write(1, &buffer[index], len - (1 - bdd_st) - 2));
+		}
+	}
+
+	buffer[--index] = 'x';
+	buffer[--index] = '0';
+	if (more_c)
+		buffer[--ind] = more_c;
+	return (write(1, &buffer[index], BUFF_SIZE - index - 1));
+}
+
