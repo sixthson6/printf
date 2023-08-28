@@ -42,7 +42,7 @@ int octal_function(va_list arg, char buffer[], int f, int w, int p)
 	unsigned long int number = va_arg(arg, unsigned long int);
 	unsigned long int flg_number = number;
 
-	(void)width;
+	(void)w;
 
 	if (number == 0)
 		buffer[k--] = '0';
@@ -54,7 +54,7 @@ int octal_function(va_list arg, char buffer[], int f, int w, int p)
 	}
 	k++;
 
-	if (flags & 8 && flg_number != 0)
+	if (f & 8 && flg_number != 0)
 		buffer[k--] = '0';
 	k++;
 

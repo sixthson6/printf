@@ -38,7 +38,7 @@ int write_number_function(int is_neg, int index, char buffer[], int f, int w, in
 	(void)w;
 	(void)p;
 
-	return (write_num(index, buffer, len, int f, int w, int p));
+	return (write_num(index, buffer, len, f, w, p));
 }
 
 /**
