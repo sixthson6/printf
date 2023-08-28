@@ -43,7 +43,7 @@ int unsigned_printer(int is_neg, int index, char buffer[], int f, int w, int p)
 
 		if (f & 1)
 		{
-			return (write(1, &buffer[index], len) + write(1, &buffer[index], len++));
+			return (write(1, &buffer[index], len) + write(1, &buffer[index], len));
 		}
 	}
 

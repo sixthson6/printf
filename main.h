@@ -24,7 +24,7 @@ typedef struct sym
 
 int _printf(const char *format, ...);
 int specifier_print_function(const char *format, int *index,
-		va_list arg, char buffer[], int f, int w, int p);
+va_list arg, char buffer[], int f, int w, int p);
 void buffer_printer(char buffer[], int *buffer_index);
 
 /* helper funtions that print*/
@@ -53,7 +53,7 @@ int print_printable_func(char n);
 int nonprintable_function(va_list arg, char buffer[], int f, int w, int p);
 int pointer_function(va_list arg, char buffer[], int f, int w, int p);
 
-int pointer_helper_function(char buffer[], int index, int len, int f, int w, int p);
+int pointer_helper_function(char buffer[], int index, int len);
 int rot13string_function(va_list arg, char buffer[], int f, int w, int p);
 int reverse_function(va_list arg, char buffer[], int f, int w, int p);
 

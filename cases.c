@@ -9,9 +9,13 @@
  */
 int char_function(va_list arg, char buffer[], int f, int w, int p)
 {
+	(void)f;
+	(void)w;
+	(void)p;
+
 	char a = va_arg(arg, int);
 
-	return (write_function(a, buffer));
+	return (write_function(a, buffer, f, w, p));
 }
 
 /**

@@ -19,7 +19,7 @@ int pointer_function(va_list arg, char buffer[], int f, int w, int p)
 
 
 	(void)w;
-	(void)s;
+	(void)f;
 	(void)p;
 
 	if (address == NULL)
@@ -67,15 +67,15 @@ int reverse_function(va_list arg, char buffer[], int f, int w, int p)
 	int count = 0, i, j;
 	char *str;
 
-	void(w);
-	void(f);
-	void(buffer);
+	(void)w;
+	(void)f;
+	(void)buffer;
 
 	str = va_arg(arg, char *);
 
 	if (str == NULL)
 	{
-		void(precision);
+		(void)p;
 		str = "Null";
 	}
 
@@ -84,7 +84,7 @@ int reverse_function(va_list arg, char buffer[], int f, int w, int p)
 		for (i = i - 1; i >= 0; i--)
 		{
 			j = str[i];
-			write(1, &z, 1);
+			write(1, &j, 1);
 			count++;
 		}
 	}
@@ -101,7 +101,7 @@ int reverse_function(va_list arg, char buffer[], int f, int w, int p)
  * Return: Numbers of bytes printed
  */
 
-int rot13string_function(va_arg arg, char buffer[], int f, int w, int p)
+int rot13string_function(va_list arg, char buffer[], int f, int w, int p)
 {
 	size_t i, j;
 	int count = 0;
@@ -112,10 +112,10 @@ int rot13string_function(va_arg arg, char buffer[], int f, int w, int p)
 
 	str = va_arg(arg, char *);
 
-	void(p);
-	void(w);
-	void(buffer);
-	void(f);
+	(void)p;
+	(void)w;
+	(void)buffer;
+	(void)f;
 
 	if (str == NULL)
 		str = "Nil";
