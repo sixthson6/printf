@@ -11,7 +11,7 @@
  */
 
 int specifier_print_function(const char *format, int *index,
-		va_list arg, char buffer[])
+		va_list arg, char buffer[], int f, int w, int p)
 {
 	int i, len = 0, count = -1, holder;
 	format_types function[] = {
@@ -29,7 +29,7 @@ int specifier_print_function(const char *format, int *index,
 	{
 		if (format[*index] == function[i].sym)
 		{
-			holder = function[i]._print(arg, buffer);
+			holder = function[i]._print(arg, buffer, f, w, p);
 			return (holder);
 		}
 	}
@@ -41,9 +41,17 @@ int specifier_print_function(const char *format, int *index,
 		len += write(1, "%%", 1);
 
 		if (format[*index - 1] == ' ')
-		{
 			len += write(1, " ", 1);
+		else if (w)
+		{
+			--(*index);
+			while (format[*index] != ' ' && format[*index] != '%')
+				--(*index);
+			if (format[*ind] == ' ')
+				--(*ind);
+			return (1);
 		}
+
 		len += write(1, &format[*index], 1);
 
 		return (len);
