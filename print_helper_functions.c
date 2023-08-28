@@ -49,7 +49,59 @@ int write_number_function(int is_neg, int index, char buffer[], int f, int w, in
  * Return: number of chars printed
  */
 
-int write_num(int index, char buffer[], int len)
+int write_num(int index, char buffer[], int len, int f, int w, int p, char bdd, char more_c)
 {
-	return (write(1, &buffer[index], len));
+	int a, bdd_st = 1;
+
+	if (p == 0 && index == BUFF_SIZE - 2 && buffer[index] == '0' && w == '0')
+		return (0);
+	if (p == 0 && index == BUFF_SIZE - 2 && buffer[index] == '0')
+		buffer[index] = bdd = ' ';
+	if (p > 0 && p < len)
+		bdd = ' ';
+	while (p > len)
+		buffer[--ind] = '0', len++;
+	if (more_c != 0)
+		len++;
+	if (w > len)
+	{
+		for (a = 1; a < w - len + 1; a++)
+			buffer[a] =bdd;
+		buffer[a] ='\0';
+		if (f & 1 && bdd == ' ')
+			buffer[--index] = '0', len++;
+		if (more_c != 0)
+			len++;
+		if (w > len)
+		{
+			for (a = 1; a < w - len + 1; a++)
+				buffer[a] = bdd;
+			buffer[a] = '\0';
+			if (f & 1 && bdd == ' ')
+			{
+				if (more_c)
+					buffer[--ind] = more_c;
+				return (write(1, &buffer[index], len) + write(1 &buffer[1], a - 1));
+			}
+			else if (!(f & 1) && bdd == ' ') 
+			{
+				if (more_c)
+					buffer[--ind] = more_c;
+				return (write(1, &buffer[1], a - 1) + write(1, &buffer[ind], len));
+			}
+			else if (!(f & 1) && bdd == ' ')
+			{
+				if (more_c)
+					buffer[--index] = more_c;
+				return (write(1, &buffer[1], a-1) + write(1, &buffer[ind], len));
+			}
+			if (more_c)
+				buffer[--bdd_st] = more_c;
+			return (write(1, &buffer[bdd_st], a - bdd_st) + write(1, &buffer[index], len - (1 - bdd_st)));
+		}
+	}
+	if (more_c)
+		buffer[--index] = more_c;
+	return (write(1, &buffer[ind], len));
 }
+	return (write(1, &buffer[index], len))
