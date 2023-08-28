@@ -47,8 +47,8 @@ int specifier_print_function(const char *format, int *index,
 			--(*index);
 			while (format[*index] != ' ' && format[*index] != '%')
 				--(*index);
-			if (format[*ind] == ' ')
-				--(*ind);
+			if (format[*index] == ' ')
+				--(*index);
 			return (1);
 		}
 

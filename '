@@ -10,7 +10,6 @@ int _printf(const char *format, ...)
 {
 	int i, specifiers_printed = 0, chars_printed = 0;
 	int buffer_index = 0;
-	int f, w, p;
 	char buffer[BUFF_SIZE];
 	va_list arg;
 
@@ -35,9 +34,6 @@ int _printf(const char *format, ...)
 		else
 		{
 			buffer_printer(buffer, &buffer_index);
-			f = flag_function(format, &i);
-			w = width_function(format, &i, arg);
-			p = precision_function(format, &i, arg);
 			++i;
 			specifiers_printed = specifier_print_function(format, &i, arg, buffer, f, w, p);
 
