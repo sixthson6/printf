@@ -17,7 +17,7 @@ int unsigned_printer(int is_neg, int index, char buffer[], int f, int w, int p)
 
 	(void)is_neg;
 
-	if (p == 0 && index == BUFF_SIZE - 2 && buffer[imdex] == '0')
+	if (p == 0 && index == BUFF_SIZE - 2 && buffer[index] == '0')
 		return (0);
 
 	while (p > 0 && p < len)

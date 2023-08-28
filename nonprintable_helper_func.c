@@ -27,9 +27,11 @@ int hexa_convert(char ascii_c, char buffer[], int i)
 		ascii_c = ascii_c * -1;
 
 	buffer[i++] = '\\';
+
 	buffer[i++] = 'x';
 
 	buffer[i++] = hexa_map[ascii_c / 16];
+
 	buffer[i] = hexa_map[ascii_c % 16];
 
 	return (3);

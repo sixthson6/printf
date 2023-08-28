@@ -31,7 +31,7 @@ void buffer_printer(char buffer[], int *buffer_index);
 int write_function(char c, char buffer[], int f, int w, int p);
 int write_number_function(int is_neg, int index, char buffer[], int f, int w, int p);
 int write_num(int index, char buffer[], int len, int f, int w, int p); 
-long int size_number_function(long int num, int size, int f, int w, int p);
+long int size_number_function(long int num, int size);
 
 int handle_format_argument(const char **format, va_list arguments);
 
@@ -54,7 +54,7 @@ int nonprintable_function(va_list arg, char buffer[], int f, int w, int p);
 int pointer_function(va_list arg, char buffer[], int f, int w, int p);
 
 int pointer_helper_function(char buffer[], int index, int len, int f, int w, int p);
-int rot13string_function(va_arg arg, char buffer[], int f, int w, int p);
+int rot13string_function(va_list arg, char buffer[], int f, int w, int p);
 int reverse_function(va_list arg, char buffer[], int f, int w, int p);
 
 int flag_function(const char *format, int *i);

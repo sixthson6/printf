@@ -17,8 +17,8 @@ int specifier_print_function(const char *format, int *index,
 	format_types function[] = {
 		{'c', char_function},{'u', unsigned_function},{'S', nonprintable_function},
 		{'s', string_function},{'o', octal_function},{'p', pointer_function},
-		{'i', int_function},{'x', hexadecimal_function},
-		{'d', int_function},{'X', hexadecimal_function},
+		{'i', int_function},{'x', hexadecimal_function},{'R', rot13string_function},
+		{'d', int_function},{'X', hexadecimal_function},{'r', reverse_function},
 		{'%', percent_function},{'b', binary_function},
 		{'\0', NULL}
 	};

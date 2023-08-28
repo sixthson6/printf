@@ -35,7 +35,7 @@ int flag_function(const char *format, int *i)
  * @arg: arguments
  * Return: precision
  */
-int precision_function(const char *format, int *i, va_list list)
+int precision_function(const char *format, int *i, va_list arg)
 {
 	int current_i = *i + 1;
 	int p = -1;
