@@ -71,7 +71,11 @@ int octal_function(va_list arg, char buffer[], int f, int w, int p)
 
 int hexadecimal_function(va_list arg, char buffer[], int f, int w, int p)
 {
-	return (hexa_print(arg, "0123456789abcdef", buffer, f, 'x', w, p));
+	(void)f;
+	(void)w;
+	(void)p;
+
+	return (hexa_print(arg, "0123456789abcdef", buffer));
 }
 
 /**
@@ -98,7 +102,8 @@ int hexa_print(va_list arg, char map[], char buffer[])
 		number = number / 16;
 	}
 	k++;
-	return (unsigned_printer(0, k, buffer));
+
+	return (unsigned_printer(0, k, buffer, f, w, p));
 }
 
 /**
@@ -129,7 +134,7 @@ int pointer_printer(char buffer[], int index, int len, int w, int f, char bdd, c
 
 			if (more_c)
 				buffer[--index] = more_c;
-			return (write(1, &buffer[index], len) + write(1, &buffer[ind], len));
+			return (write(1, &buffer[index], len) + write(1, &buffer[index], len));
 		}
 
 		else if (!(f & 1) && bdd == '0')
@@ -146,7 +151,7 @@ int pointer_printer(char buffer[], int index, int len, int w, int f, char bdd, c
 	buffer[--index] = 'x';
 	buffer[--index] = '0';
 	if (more_c)
-		buffer[--ind] = more_c;
+		buffer[--index] = more_c;
 	return (write(1, &buffer[index], BUFF_SIZE - index - 1));
 }
 

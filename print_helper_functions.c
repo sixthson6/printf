@@ -60,7 +60,10 @@ int write_num(int index, char buffer[], int len, int f, int w, int p, char bdd, 
 	if (p > 0 && p < len)
 		bdd = ' ';
 	while (p > len)
-		buffer[--ind] = '0', len++;
+	{
+		buffer[--index] = '0';
+		len++;
+	}
 	if (more_c != 0)
 		len++;
 	if (w > len)
@@ -80,20 +83,20 @@ int write_num(int index, char buffer[], int len, int f, int w, int p, char bdd, 
 			if (f & 1 && bdd == ' ')
 			{
 				if (more_c)
-					buffer[--ind] = more_c;
+					buffer[--index] = more_c;
 				return (write(1, &buffer[index], len) + write(1 &buffer[1], a - 1));
 			}
 			else if (!(f & 1) && bdd == ' ') 
 			{
 				if (more_c)
-					buffer[--ind] = more_c;
-				return (write(1, &buffer[1], a - 1) + write(1, &buffer[ind], len));
+					buffer[--index] = more_c;
+				return (write(1, &buffer[1], a - 1) + write(1, &buffer[index], len));
 			}
 			else if (!(f & 1) && bdd == ' ')
 			{
 				if (more_c)
 					buffer[--index] = more_c;
-				return (write(1, &buffer[1], a-1) + write(1, &buffer[ind], len));
+				return (write(1, &buffer[1], a-1) + write(1, &buffer[index], len));
 			}
 			if (more_c)
 				buffer[--bdd_st] = more_c;
@@ -102,6 +105,6 @@ int write_num(int index, char buffer[], int len, int f, int w, int p, char bdd, 
 	}
 	if (more_c)
 		buffer[--index] = more_c;
-	return (write(1, &buffer[ind], len));
+
+	return (write(1, &buffer[index], len));
 }
-	return (write(1, &buffer[index], len))
