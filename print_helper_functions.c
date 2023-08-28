@@ -32,13 +32,20 @@ int write_function(char c, char buffer[], int f, int w, int p)
 int write_number_function(int is_neg, int index, char buffer[], int f, int w, int p)
 {
 	int len = BUFF_SIZE - index - 1;
+	char sep = ' '; c = 0;
 
-	(void)is_neg;
-	(void)f;
-	(void)w;
-	(void)p;
+	if ((f & 4) && !(f & 1))
+	{
+		sep = '0';
+	}
+	if (is_neg)
+		c = '-';
+	else if (f & 2)
+		c = '+';
+	else if (f & 16)
+		c = ' ';
 
-	return (write_num(index, buffer, len, f, w, p));
+	return (write_num(index, buffer, f, w, p, len, sep, c ));
 }
 
 /**
