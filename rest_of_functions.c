@@ -1,9 +1,12 @@
 #include "main.h"
 
 /**
- * print_unsigned - print unsigned integer
+ * unsigned_function - print unsigned integer
  * @arg: List a of arguments
  * @buffer: Buffer array to handle print
+ * @f: flag
+ * @p: precision
+ * @w: width
  * Return: num( character bytes printed).
  */
 
@@ -33,6 +36,9 @@ int unsigned_function(va_list arg, char buffer[], int f, int w, int p)
  * octal_function - prints an unsigned no. in octal notation
  * @arg: arguments
  * @buffer: buffer array
+ * @f: flag
+ * @w: width
+ * @p: precision
  * Return:  n(of character bytes printed)
  */
 
@@ -66,6 +72,9 @@ int octal_function(va_list arg, char buffer[], int f, int w, int p)
  * in hexadecimal notation
  * @arg: arguments
  * @buffer: buffer array
+ * @f: flag
+ * @w: width
+ * @p: precision
  * Return: n(of character bytes printed)
  */
 
@@ -76,9 +85,12 @@ int hexadecimal_function(va_list arg, char buffer[], int f, int w, int p)
 
 /**
  * hexa_print - Prints a hexa num
- * @types: arguments
+ * @arg: arguments
  * @map: Array of values to map the number to
  * @buffer: buffer array
+ * @f: flags
+ * @w: width
+ * @p: precision
  * Return: n(of character bytes printed)
  */
 

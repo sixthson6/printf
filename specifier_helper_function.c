@@ -15,14 +15,13 @@ int specifier_print_function(const char *format, int *index,
 {
 	int i, len = 0, count = -1, holder;
 	format_types function[] = {
-		{'c', char_function},{'u', unsigned_function},{'S', nonprintable_function},
-		{'s', string_function},{'o', octal_function},{'p', pointer_function},
-		{'i', int_function},{'x', hexadecimal_function},{'R', rot13string_function},
-		{'d', int_function},{'X', hexadecimal_function},{'r', reverse_function},
-		{'%', percent_function},{'b', binary_function},
+		{'c', char_function}, {'u', unsigned_function}, {'S', nonprintable_function},
+		{'s', string_function}, {'o', octal_function}, {'p', pointer_function},
+		{'i', int_function}, {'x', hexadecimal_function}, {'R', rot13string_function},
+		{'d', int_function}, {'X', hexadecimal_function}, {'r', reverse_function},
+		{'%', percent_function}, {'b', binary_function},
 		{'\0', NULL}
 	};
-
 	(void)buffer;
 
 	for (i = 0; function[i].sym != '\0'; i++)
@@ -33,7 +32,6 @@ int specifier_print_function(const char *format, int *index,
 			return (holder);
 		}
 	}
-
 	if (function[i].sym == '\0')
 	{
 		if (format[*index] == '\0')
@@ -51,11 +49,8 @@ int specifier_print_function(const char *format, int *index,
 				--(*index);
 			return (1);
 		}
-
 		len += write(1, &format[*index], 1);
-
 		return (len);
 	}
-
 	return (count);
 }

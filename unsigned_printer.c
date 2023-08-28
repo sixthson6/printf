@@ -6,6 +6,9 @@
  * the num is negative
  * @index: Index
  * @buffer: array of chars
+ * @f: flag
+ * @w: width
+ * @p: precision
  * Return: n( chars).
  */
 
@@ -14,7 +17,7 @@ int unsigned_printer(int is_neg, int index, char buffer[], int f, int w, int p)
 	int len = BUFF_SIZE - index - 1;
 	int a = 0;
 	char bdd;
-	
+
 	bdd = ' ';
 
 	(void)is_neg;

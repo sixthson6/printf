@@ -14,7 +14,7 @@ int flag_function(const char *format, int *i)
 
 	for (current_i = *i + 1; format[current_i] != '\0'; current_i++)
 	{
-		for (k = 0; array_1[k] !='\0'; k++)
+		for (k = 0; array_1[k] != '\0'; k++)
 			if (format[current_i] == array_1[k])
 			{
 				f |= array_2[k];
@@ -98,7 +98,6 @@ int width_function(const char *format, int *i, va_list arg)
 			break;
 		}
 	}
-	
 	*i = current_i - 1;
 
 	return (w);

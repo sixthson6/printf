@@ -45,7 +45,7 @@ int write_number_function(int is_neg, int index, char buffer[], int f, int w, in
 	else if (f & 16)
 		c = ' ';
 
-	return (write_num(index, buffer, len, f, w, p, sep, c ));
+	return (write_num(index, buffer, len, f, w, p, sep, c));
 }
 
 /**
@@ -76,8 +76,8 @@ int write_num(int index, char buffer[], int len, int f, int w, int p, char bdd, 
 	if (w > len)
 	{
 		for (a = 1; a < w - len + 1; a++)
-			buffer[a] =bdd;
-		buffer[a] ='\0';
+			buffer[a] = bdd;
+		buffer[a] = '\0';
 		if (f & 1 && bdd == ' ')
 			buffer[--index] = '0', len++;
 		if (more_c != 0)
@@ -93,7 +93,7 @@ int write_num(int index, char buffer[], int len, int f, int w, int p, char bdd, 
 					buffer[--index] = more_c;
 				return (write(1, &buffer[index], len) + write(1, &buffer[1], a - 1));
 			}
-			else if (!(f & 1) && bdd == ' ') 
+			else if (!(f & 1) && bdd == ' ')
 			{
 				if (more_c)
 					buffer[--index] = more_c;
@@ -103,7 +103,7 @@ int write_num(int index, char buffer[], int len, int f, int w, int p, char bdd, 
 			{
 				if (more_c)
 					buffer[--index] = more_c;
-				return (write(1, &buffer[1], a-1) + write(1, &buffer[index], len));
+				return (write(1, &buffer[1], a - 1) + write(1, &buffer[index], len));
 			}
 			if (more_c)
 				buffer[--bdd_st] = more_c;
