@@ -45,7 +45,7 @@ int write_number_function(int is_neg, int index, char buffer[], int f, int w, in
 	else if (f & 16)
 		c = ' ';
 
-	return (write_num(index, buffer, f, w, p, len, sep, c ));
+	return (write_num(index, buffer, len, f, w, p, sep, c ));
 }
 
 /**

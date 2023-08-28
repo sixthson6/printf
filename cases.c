@@ -76,7 +76,7 @@ int int_function(va_list arg, char buffer[], int f, int w, int p)
 	long int y = va_arg(arg, long int);
 	unsigned long int num;
 
-/*	y = size_number_function(y, size);*/
+	/*y = size_number_function(y, size);*/
 
 	if (y == 0)
 		buffer[x--] = '0';
