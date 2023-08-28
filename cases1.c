@@ -23,10 +23,14 @@ long int size_number_function(long int num, int size)
  * @buffer: temporal location
  * Return: number of bytes
  */
-int nonprintable_function(va_list arg, char buffer[])
+int nonprintable_function(va_list arg, char buffer[], int p, int f, int w)
 {
 	int i = 0, off = 0;
 	char *strr = va_arg(arg, char *);
+
+	void(f);
+	void(w);
+	void(p);
 
 	if (strr == NULL)
 		return (write(1, "(null)", 6));

@@ -12,8 +12,10 @@
 int unsigned_printer(int is_neg, int index, char buffer[], int f, int w, int p)
 {
 	int len = BUFF_SIZE - index - 1;
-	a = 0;
-	char bdd = ' ';
+	int a = 0;
+	char bdd;
+	
+	bdd = ' ';
 
 	(void)is_neg;
 

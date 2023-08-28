@@ -18,9 +18,9 @@ int pointer_function(va_list arg, char buffer[], int f, int w, int p)
 	void *address = va_arg(arg, void *);
 
 
-	(void)width;
-	(void)size;
-	(void)precision;
+	(void)w;
+	(void)s;
+	(void)p;
 
 	if (address == NULL)
 	{
@@ -34,7 +34,7 @@ int pointer_function(va_list arg, char buffer[], int f, int w, int p)
 	{
 		buffer[index] = map[number_add % 16];
 		number_add /= 16;
-		len++
+		len++;
 	}
 	if ((f & 4) && !(f & 1))
 	{
@@ -46,7 +46,7 @@ int pointer_function(va_list arg, char buffer[], int f, int w, int p)
 	}
 	else if (f & 16)
 	{
-		c = ' ', len++
+		c = ' ', len++;
 	}
 	index++;
 
