@@ -62,4 +62,6 @@ int precision_function(const char *format, int *i, va_list list);
 int width_function(const char *format, int *i, va_list arg);
 int digit_function(char c);
 
+int pointer_printer(char buffer[], int index, int len, int w, int f, char bdd, char more_c, int bdd_st);
+
 #endif
